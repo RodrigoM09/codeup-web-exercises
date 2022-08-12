@@ -92,7 +92,7 @@ console.log(isTwo(random))
  */
     let percentage = prompt ("What percentage of a tip would you like to leave?");
     let billTotal = prompt ("What is the total of your bill?");
-    console.log(calculateTip(percentage,billTotal))
+    alert ("Your tip is " + calculateTip(percentage,billTotal))
 
 
 /**
