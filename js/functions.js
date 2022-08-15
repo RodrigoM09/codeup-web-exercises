@@ -10,8 +10,9 @@
  */
 
 function sayHello(name){
-    return "Hello, " + name
+    return "Hello, " + name + "!";
 }
+
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -19,6 +20,10 @@ function sayHello(name){
  *
  * console.log 'helloMessage' to check your work
  */
+
+//let helloMessage = sayHello("Rodrigo")
+//console.log(helloMessage)
+
 console.log(sayHello("rodrigo"))
 
 
@@ -54,14 +59,8 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
     function isTwo(number) {
-    if (number === 2){
-    return true;
-}else {
-        return false;
-    }
-
+    return number === 2;
 }
-
 
 console.log(isTwo(random))
 
@@ -79,7 +78,7 @@ console.log(isTwo(random))
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
     function calculateTip(percentage,billTotal){
-        return percentage * billTotal;
+        return billTotal * percentage;
 }
 
 
@@ -92,7 +91,9 @@ console.log(isTwo(random))
  */
     let percentage = prompt ("What percentage of a tip would you like to leave?");
     let billTotal = prompt ("What is the total of your bill?");
-    alert ("Your tip is " + calculateTip(percentage,billTotal))
+
+    let tip = calculateTip(percentage/100, billTotal)
+    alert ("Your tip is " + tip.toFixed(2))
 
 
 /**
@@ -110,6 +111,6 @@ console.log(isTwo(random))
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-    function applyDiscount(discount, price){
+    function applyDiscount(price,discount){
     return price - (discount * price);
 }
