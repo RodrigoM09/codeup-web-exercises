@@ -68,13 +68,38 @@
 // math.floor(math.random() * 6 + 1
 // math.ceil rounds up
 // math.ceil(math.random() * 6
+//
+// let number = Math.ceil(Math.random() * 6);
+// let guess;
+// console.log(guess)
+// do {
+//     guess = parseInt(prompt("Enter a number between 1 and 6"));
+//
+// } while(guess !== number)
+// alert(`Your guess of ${guess} matches the number ${guess}!`);
 
-let number = Math.ceil(Math.random() * 6);
-let guess;
-console.log(guess)
-do {
-    guess = parseInt(prompt("Enter a number between 1 and 6"));
+// this is the loop control variable
+//intialize it to a starting value
+// let count = 100;
+// //check the value of the loop control
+// //variable in a conditional test
+// while (count >= 0){
+//     console.log(count);
+//     // change the value of the loop control
+//     count = count -1;
+// }
+//
+// for(let i = 100; i >= 0; i--){
+//     console.log(i);
+// }
+//
+// let i = 0;
+// while(i<100){
+//     console.log(i);
+//     i++;
+// }
+// console.log("Outside the loop: " + i)
 
-} while(guess !== number)
-alert(`Your guess of ${guess} matches the number ${guess}!`);
-
+for(let i = 0; i < 100; i++){
+    console.log(i)
+}
