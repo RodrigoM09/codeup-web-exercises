@@ -11,7 +11,7 @@ let groceryList = ['bread','eggs','butter','milk']
 //     }
 // }
 //
-// let cars = ['Porsche','Mercedez','Lamborghini', 'Ferrari']
+// let cars = ['Porsche','Mercedes','Lamborghini', 'Ferrari']
 // // for (i = 0; i < cars.length; i++ ){
 // //     if (i === cars.length - 1) {
 // //         console.log(cars[i])
@@ -29,10 +29,10 @@ let groceryList = ['bread','eggs','butter','milk']
 //
  let prices = [32, 99, 21, 6.99, 4.99, 12.99, 8.98, 5.99]
 // //for each loop takes an anonymous function
-// //the function we pass to the foreach loop hasup to three parameters
+// //the function we pass to the foreach loop has up to three parameters
 // // The first parameter represents the array elements
 // // the second parameter represents the array itself
-// // the third parameter reprsents the array itself
+// // the third parameter represents the array itself
 // // the second and third parameters are optional
 //
 // // prices.forEach(function(price, index){
@@ -92,12 +92,12 @@ console.log(groceryList);
 console.log(groceryList.sort());
 
 
-for (let i = 0; i < groceryList.length; i++;){
+for (let i = 0; i < groceryList.length; i++){
     groceryList[i] = groceryList[i].toLowerCase();
 }
 console.log(groceryList.sort());
 
-groceryList.forEach(item, index, array) => {
+groceryList.forEach((item, index, array) => {
     array[index] = item.toLowerCase();
 
 })
