@@ -102,3 +102,13 @@ groceryList.forEach((item, index, array) => {
 
 })
 console.log(groceryList);
+
+
+function zatannaMagic(string){
+    let commandArray = string.toLowerCase().split(" ");
+    let newArray = []
+    for (let i = 0; i<commandArray.length; i++){
+        newArray[i].split('').reverse().join('');
+    }
+    return newArray.join(' ') + "!"
+}
