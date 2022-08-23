@@ -14,7 +14,7 @@
     let person ={
         firstName: "Rodrigo",
         lastName: "Marquez",
-        sayHello: function (sayHello) {
+        sayHello: function sayHello() {
             return "Hello from " + this.firstName + " " + this.lastName
         }
     }
@@ -54,12 +54,12 @@
         {name: 'George', amount: 320}
     ];
 
-shoppers.forEach(function (total){
-    if (total.amount < 200){
-        console.log(`${total.name} no discount your total is under 200. Your total is ${total.amount}`)
-    }else if (total.amount > 200){
-    console.log(`${total.name} congratulations you will get a 12% discount. Your total before discount ${total.amount}. 
-    Your total after discount is ${total.amount * .88}`)}})
+shoppers.forEach(function (shopper){
+    if (shopper.amount < 200){
+        console.log(`${shopper.name} no discount your total is under 200. Your total is ${shopper.amount}`)
+    }else if (shopper.amount > 200){
+    console.log(`${shopper.name} congratulations you will get a 12% discount. Your total before discount ${shopper.amount}. 
+    Your total after discount is ${shopper.amount * .88}`)}})
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -76,28 +76,38 @@ shoppers.forEach(function (total){
     let books = [
         {
           title: "How to win friends and influence people",
-          authorFirstName: "Dale",
-          lastName: "Carnegie"
+            author: {
+                firstName: "Dale",
+                lastName: "Carnegie"
+            }
         },
         {
             title: "The Challenger Sale",
-            authorFirstName: "Brent",
-            lastName: "Adamson"
+            author: {
+                firstName: "Brent",
+                lastName: "Adamson"
+            }
         },
         {
             title: "Coding For Dummies",
-            authorFirstName: "Nikhil",
-            lastName: "Abraham"
+            author: {
+                firstName: "Nikhil",
+                lastName: "Abraham"
+            }
         },
         {
             title: "Where the Sidewalk Ends",
-            authorFirstName: "Shel",
-            lastName: "Silverstein"
+            author: {
+                firstName: "Shel",
+                lastName: "Silverstein"
+            }
         },
         {
             title: "The Old Man and the Sea",
-            authorFirstName: "Ernest",
-            lastName: "Hemingway"
+            author: {
+                firstName: "Ernest",
+                lastName: "Hemingway"
+            }
         }
     ]
 
@@ -127,7 +137,7 @@ shoppers.forEach(function (total){
      *      ...
      */
         for (let i = 0; i < books.length; i++){
-            console.log("Book #" + [i] + "\n" + "Title: " + books[i].title + "\n" + "Author: " + books[i].authorFirstName + " " + books[i].lastName);
+            console.log("Book #" + (i + 1) + "\n" + "Title: " + books[i].title + "\n" + "Author: " + books[i].firstName + " " + books[i].lastName);
 
         }
     /**
@@ -140,14 +150,29 @@ shoppers.forEach(function (total){
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    function createBook(title, authorName){
-        return {
-            title: title,
-            authorName: authorName
-        }
-    }
-    function showBookInfo(){
+    // function showBookInfo(book, index){
+    //     console.log("Book # " + (index + 1));
+    //     console.log("Title: " + book.title);
+    //     console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+    //     console.log("---");
+    // }
+    //
+    // showBookInfo(nineteenEightyFour);
 
-    }
+    // function Book(title, authorFirstName, authorLastName){
+    //     return {
+    //         this.title = title;
+    //         this.author = {
+    //             firstName: authorFirstName,
+    //             lastName: authorLastName
+    //         }
+    //     }
+    // }
+    //
+    // let nineteenEightyFour = new Book("1984", "George","Orwell");
+    //
+    // function showBookInfo(){
+    //
+    // }
 
 })();

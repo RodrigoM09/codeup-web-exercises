@@ -137,39 +137,39 @@
 // The controller might hande taking user input and
 // calculating the inputs effect on the game
 
-let controller = {
-    attack: function (attacker, defender){
-        let defenderHPBeforeAttack = defender.hitPoints;
-        let damage = Math.ceil(Math.random() * attacker.maxDamage);
-        defender.hitPoints -= damage;
-        view.displayAttackResults(attacker, defender, defenderHPBeforeAttack, damage);
-    }
-}
+// let controller = {
+//     attack: function (attacker, defender){
+//         let defenderHPBeforeAttack = defender.hitPoints;
+//         let damage = Math.ceil(Math.random() * attacker.maxDamage);
+//         defender.hitPoints -= damage;
+//         view.displayAttackResults(attacker, defender, defenderHPBeforeAttack, damage);
+//     }
+// }
 
 // The view object handles output
 
-let view = {
-    displayAttackResults: function (attacker, defender,defenderHPBeforeAttack, damage){
-        console.log(`${defender.name} has ${defenderHPBeforeAttack} hit points`);
-        console.log(attacker.name + " attacks!");
-        console.log(`${attacker.name} does ${damage} hit points of damage`);
-        console.log(`${defender.name} now has ${defenderHPBeforeAttack - damage} hit points`);
-        console.log("-------------");
-    }
-}
-
-let model = {
-    fighter: {
-        name: "Arata",
-        hitPoints: 18,
-        maxDamage: 8
-    },
-    monster: {
-        name: "Goblin",
-        hitPoints: 8,
-        maxDamage: 6
-    }
-}
+// let view = {
+//     displayAttackResults: function (attacker, defender,defenderHPBeforeAttack, damage){
+//         console.log(`${defender.name} has ${defenderHPBeforeAttack} hit points`);
+//         console.log(attacker.name + " attacks!");
+//         console.log(`${attacker.name} does ${damage} hit points of damage`);
+//         console.log(`${defender.name} now has ${defenderHPBeforeAttack - damage} hit points`);
+//         console.log("-------------");
+//     }
+// }
+//
+// let model = {
+//     fighter: {
+//         name: "Arata",
+//         hitPoints: 18,
+//         maxDamage: 8
+//     },
+//     monster: {
+//         name: "Goblin",
+//         hitPoints: 8,
+//         maxDamage: 6
+//     }
+// }
 // controller.attack(model.fighter, model.monster);
 // controller.attack(model.monster,model.fighter);
 
@@ -180,23 +180,43 @@ let model = {
 
 
 // create a function that returns objects
-function makeMonster(name, hitPoints, maxDamage){
-    return {
-        name: name,
-        hitPoints: hitPoints,
-        maxDamage: maxDamage
-    }
-}
+// function makeMonster(name, hitPoints, maxDamage){
+//     return {
+//         name: name,
+//         hitPoints: hitPoints,
+//         maxDamage: maxDamage
+//     }
+// }
 
 // model.hobgoblin = makeMonster("Hobgoblin", 11, 11);
 // controller.attack(model.hobgoblin, model.fighter);
 
 // use an object constructor
-function Monster(name, hitPoints, maxDamage){
-    this.name = name;
-    this.hitPoints = hitPoints;
-    this.maxDamage = maxDamage;
-}
+// function Monster(name, hitPoints, maxDamage){
+//     this.name = name;
+//     this.hitPoints = hitPoints;
+//     this.maxDamage = maxDamage;
+// }
+//
+// model.hobGoblinCaptain = new Monster("Hobgoblin Captain", 39, 14);
+// controller.attack(model.hobGoblinCaptain, model.fighter);
 
-model.hobGoblinCaptain = new Monster("Hobgoblin Captain", 39, 14);
-controller.attack(model.hobGoblinCaptain, model.fighter);
+// Object Destructuring
+const car = {
+    make: "Toyota",
+    model: "Tacoma",
+    year: 2019,
+    mileage: 12657
+}
+// let make = car.make;
+// let carModel = car.model;
+
+const {make, model, year, mileage} = car;
+console.log(make);
+console.log(model);
+console.log(year);
+console.log(mileage);
+
+const outputCarInfo = ({make, model, year, mileage} = car) => {
+    console.log(`${year} ${make} ${model} with ${mileage}`)}
+outputCarInfo(car)
