@@ -3,26 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Intro to HTML</title>
-        <style>
-            body {
-                background-color: black;
-                color: white;
-            }
-            a {
-                color: azure;
-            }
-            img {
-                width: 25%;
-                height: 25%;
-            }
-            /*div {*/
-            /*    text-align: center;*/
-            /*    border-bottom: 2px solid white;*/
-            /*    border-radius: 7px;*/
-            /*    padding: 5px;*/
-            /*    padding-bottom: 10px;*/
-            /*}*/
-        </style>
+        <link rel="stylesheet" href="css/site.css">
+        <link rel="stylesheet" href="css/intro-to-css.css">
     </head>
     <body>
     <Header>
@@ -33,7 +15,7 @@
     </header>
         <section>
             <h2>Languages</h2>
-            <ul>
+            <ul class="bold">
                 <li>Javascript</li>
                 <li>Java</li>
                 <li>PHP</li>
@@ -52,7 +34,7 @@
     </ol>
  <section>
      <table>
-         <h2>My Prices</h2>
+         <h2 id="prices">My Prices</h2>
          <tr>
              <th>Service</th>
              <th>Price</th>

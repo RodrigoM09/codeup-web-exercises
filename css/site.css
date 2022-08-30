@@ -1,0 +1,26 @@
+body {
+    background-color: black;
+    color: white;
+}
+a {
+    color: azure;
+}
+
+/*div {*/
+/*    text-align: center;*/
+/*    border-bottom: 2px solid white;*/
+/*    border-radius: 7px;*/
+/*    padding: 5px;*/
+/*    padding-bottom: 10px;*/
+/*}*/
+img{
+    width: 250px;
+    height: 250px;
+}
+#prices {
+    border-bottom: 1px solid lightgoldenrodyellow;
+}
+
+.bold {
+    font-weight: bold;
+}
