@@ -23,4 +23,21 @@ img{
 
 .bold {
     font-weight: bold;
+
+}
+
+.italic {
+    font-style: italic;
+}
+
+li.italic {
+    font-size: 1.1rem;
+}
+
+ul li{
+    color: lightblue;
+}
+
+ol li{
+    color: chartreuse;
 }
