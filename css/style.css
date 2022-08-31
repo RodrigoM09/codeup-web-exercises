@@ -19,3 +19,6 @@ div{
 h1 {
     color: purple;
 }
+ul {
+    list-style-type: lower-roman;
+}

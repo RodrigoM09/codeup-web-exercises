@@ -1,13 +1,50 @@
 #heading{
     font-family: "Bodoni 72";
 }
-body{
-    margin-left: 6vw;
+h2{
+    margin-bottom: 0;
+
 }
-@media print {
-    body {
-        width: 8.25in;
-        height: 11.75in;
-        margin: 0 0 0 0;
-    }
+/*@media print {*/
+/*    body {*/
+/*        width: 8.25in;*/
+/*        height: 11.75in;*/
+/*        margin: 0 0 0 0;*/
+/*    }*/
+/*}*/
+.page {
+    width: 27.9cm;
+
+    min-height: 43.2cm;
+
+    padding-left: 2cm;
+    padding-top: 2cm;
+    padding-right: 2cm;
+    padding-bottom: 2cm;
+}
+
+@page {
+    size: ledger portrait;
+
+    margin-left: 2cm;
+    margin-top: 2cm;
+    margin-right: 2cm;
+    margin-bottom: 2cm;
+}
+
+.experience h2{
+    color: dodgerblue;
+}
+
+.jobs-title{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.duties{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.contacts{
+    display: flex;
+    justify-content: space-between;
 }
