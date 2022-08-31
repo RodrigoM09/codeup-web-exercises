@@ -34,17 +34,40 @@ h2{
 
 .experience h2{
     color: dodgerblue;
+    text-decoration: underline;
 }
 
 .jobs-title{
-    margin-top: 0;
+    margin-top: 1px;
     margin-bottom: 0;
+    font-weight: lighter;
 }
 .duties{
     margin-top: 0;
     margin-bottom: 0;
+    font-weight: normal;
 }
 .contacts{
     display: flex;
     justify-content: space-between;
+}
+main {
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 25%);
+    margin: 2rem auto;
+    padding: 2.75rem;
+    position: relative;
+}
+jobs {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+ul{
+    margin-top: .05em;
 }
