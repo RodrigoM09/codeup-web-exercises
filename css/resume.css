@@ -22,7 +22,6 @@ h2{
 
 @page {
     size: ledger portrait;
-
     margin: 2cm;
 }
 
@@ -33,6 +32,7 @@ h2{
 .flex{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .jobs-title{
     margin-top: 1px;
@@ -43,10 +43,6 @@ h2{
     margin-top: 0;
     margin-bottom: 0;
     font-weight: normal;
-}
-.contacts{
-    display: flex;
-    justify-content: space-between;
 }
 main {
     background: #fff;
@@ -67,13 +63,24 @@ main {
 /*}*/
 ul{
     margin-top: .05em;
+    font-weight: lighter;
 }
-jobs{
+.jobs{
     display: block;
     font-size: 1.17em;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    margin-bottom: 0;
     font-weight: bold;
+}
+.jobs-date{
+    font-weight: 400;
+    font-size: smaller;
+}
+@media screen and (max-width: 800px){
+    .jobs {
+
+    }
 }
