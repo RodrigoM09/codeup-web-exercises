@@ -1,8 +1,10 @@
 #heading{
     font-family: "Bodoni 72";
 }
-h2{
+h2 {
     margin-bottom: 0;
+    color: dodgerblue;
+    text-decoration: underline;
 
 }
 /*@media print {*/
@@ -13,21 +15,20 @@ h2{
 /*    }*/
 /*}*/
 .page {
-    width: 27.9cm;
-
+    width: 100%;
+    max-width: 1100px;
     min-height: 43.2cm;
-
     padding: 2cm;
+    display: flex;
 }
 
 @page {
     size: ledger portrait;
     margin: 2cm;
 }
-
-.experience h2{
-    color: dodgerblue;
-    text-decoration: underline;
+aside{
+    max-width: 30%;
+    margin-left: 25px;
 }
 .flex{
     display: flex;
@@ -79,8 +80,35 @@ ul{
     font-weight: 400;
     font-size: smaller;
 }
-@media screen and (max-width: 800px){
-    .jobs {
-
+.show-mobile{
+    display: none;
+}
+.noIdentifier{
+    list-style: none;
+    text-indent: -2em;
+}
+@media screen and (max-width: 1000px){
+    .page{
+        flex-direction: column;
+    }
+    aside{
+        max-width: 100%;
+    }
+    .hide-mobile{
+        display: none;
+    }
+    .show-mobile{
+        display: flex;
+    }
+}
+@media screen and (max-width: 600px){
+    .mini{
+        flex-direction: column;
+    }
+}
+@media print{
+    main {
+        background: transparent;
+        box-shadow: none;
     }
 }
