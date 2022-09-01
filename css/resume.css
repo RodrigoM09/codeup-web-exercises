@@ -17,26 +17,23 @@ h2{
 
     min-height: 43.2cm;
 
-    padding-left: 2cm;
-    padding-top: 2cm;
-    padding-right: 2cm;
-    padding-bottom: 2cm;
+    padding: 2cm;
 }
 
 @page {
     size: ledger portrait;
 
-    margin-left: 2cm;
-    margin-top: 2cm;
-    margin-right: 2cm;
-    margin-bottom: 2cm;
+    margin: 2cm;
 }
 
 .experience h2{
     color: dodgerblue;
     text-decoration: underline;
 }
-
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
 .jobs-title{
     margin-top: 1px;
     margin-bottom: 0;
@@ -59,7 +56,19 @@ main {
     padding: 2.75rem;
     position: relative;
 }
-jobs {
+/*jobs-one {*/
+/*    display: block;*/
+/*    font-size: 1.17em;*/
+/*    margin-block-start: 1em;*/
+/*    margin-block-end: 1em;*/
+/*    margin-inline-start: 0px;*/
+/*    margin-inline-end: 0px;*/
+/*    font-weight: bold;*/
+/*}*/
+ul{
+    margin-top: .05em;
+}
+jobs{
     display: block;
     font-size: 1.17em;
     margin-block-start: 1em;
@@ -67,7 +76,4 @@ jobs {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
-}
-ul{
-    margin-top: .05em;
 }
