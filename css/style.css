@@ -1,11 +1,19 @@
 body {
-    background-color: black;
-    color: white;
+    background-color: chartreuse;
+    color: black;
+    font-family: Roboto, sans-serif;
 }
-a {
-    color: azure;
+
+/* added image to header background*/
+.neato-header{
+    background-image: url("https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg?auto=compress&cs=tinysrgb&w=800");
+    background-size: 250px;
 }
+/*a {*/
+/*    color: greenyellow;*/
+/*}*/
 img {
+    border: thin solid black;
     width: 250px;
     height: 250px;
 }
@@ -13,12 +21,33 @@ div{
     text-align: center;
 }
 .fancy-header {
-    color: blue; /* single line comment */
+    color: black; /* single line comment */
     text-decoration: underline;
 }
-h1 {
-    color: purple;
-}
+/*h1 {*/
+/*    color: black;*/
+/*}*/
 ul {
     list-style-type: lower-roman;
+}
+
+table {
+    /*margin: auto;*/
+    font-size: 1.2rem;
+    border: thin solid black;
+    border-collapse: collapse;
+}
+/* adds border to and spacing tho th's and td's */
+th, td {
+    border: thin solid black;
+    padding: 10px;
+}
+
+/* prior to clicking link will be this color */
+a.link {
+    color: dodgerblue;
+}
+/* after clicking link will be this color */
+a.visited {
+    color: black;
 }

@@ -1,0 +1,19 @@
+#main {
+    box-sizing: border-box; /* will keep the border and padding from adding to the size of the box*/
+    /*box-sizing: content-box;*/
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 7px; /* rounds the edges*/
+    padding: 15px; /* padding will add space around the content inside the box*/
+    margin: 15px; /* margin will add space around the box*/
+    box-shadow: 10px 10px darkslategray;
+    /* first value is x axis, second is y axis, third is blur, 4th is spread radius  */
+}
+p{
+    box-sizing: border-box;
+    width: 350px;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 15px;
+    margin: auto;
+}
