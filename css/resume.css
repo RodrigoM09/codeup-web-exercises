@@ -40,7 +40,7 @@ aside{
     margin-bottom: 0;
     font-weight: lighter;
 }
-.duties{
+.duties {
     margin-top: 0;
     margin-bottom: 0;
     font-weight: normal;
@@ -86,6 +86,7 @@ ul{
 .noIdentifier{
     list-style: none;
     text-indent: -2em;
+    font-size: large;
 }
 @media screen and (max-width: 1000px){
     .page{
