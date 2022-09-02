@@ -1,0 +1,47 @@
+/*#ipsum {*/
+/*    width: 25%;*/
+/*    float: left;*/
+/*    border: 1px solid black;*/
+/*    padding: 5px;*/
+/*    margin: 1rem;*/
+/*}*/
+
+#ipsum, #quenya, #pirate {
+    width: 25%;
+    float: left;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 1rem;
+}
+#quenya{
+    position: relative;
+}
+img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* z-index: -1    brings an image to the front or back of another image */
+}
+/*img[src="img/codeup-log.png"]{*/
+/*    position: fixed;*/
+/*    top: 25%;*/
+/*    left: 0;*/
+/*    z-index: -1;*/
+/*}*/
+/*img[src*="fish"]{*/
+/*    position: fixed;*/
+/*    left: unset;*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*}*/
+
+footer {
+    width: 20%;
+    margin: auto;
+}
+
+footer p {
+    text-align: center;
+    position: relative;
+    /*left: 50px;*/
+}
