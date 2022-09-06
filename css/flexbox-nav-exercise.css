@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+nav {
+    background: rgb(193,193,193);
+    display: flex;
+    justify-content: space-between;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: Verdana;
+    display: inline-block; /* inline-block to increase clickable area beyond the text */
+    padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
+}
+nav a:hover {
+    background: black;
+}
+
+.fa-magnifying-glass {
+   margin-top: 20px;
+}
+.fa-cart-shopping {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.fa-user {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
