@@ -8,6 +8,7 @@ nav {
     background: rgb(193,193,193);
     display: flex;
     justify-content: space-between;
+    padding-right: 10px;
 }
 ul {
     list-style: none;
@@ -26,15 +27,19 @@ nav a:hover {
     background: black;
 }
 
-.fa-magnifying-glass {
-   margin-top: 20px;
-}
-.fa-cart-shopping {
-    margin-top: 20px;
-    margin-left: 10px;
-}
-.fa-user {
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+/*.fa-magnifying-glass {*/
+/*   margin-top: 20px;*/
+/*}*/
+/*.fa-cart-shopping {*/
+/*    margin-top: 20px;*/
+/*    margin-left: 10px;*/
+/*}*/
+/*.fa-user {*/
+/*    margin-top: 20px;*/
+/*    margin-left: 10px;*/
+/*    margin-right: 10px;*/
+/*}*/
+.list2 {
+    column-gap: 10px;
+    align-items: center;
 }
