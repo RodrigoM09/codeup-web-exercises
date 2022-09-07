@@ -1,0 +1,51 @@
+body {
+    background-color: #deded8;
+    font-family: "Helvetica Neue", Helvetica;
+}
+
+header, article,aside, footer,main {
+    padding: .5rem;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+}
+main {
+    display: flex;
+}
+
+aside {
+    flex: 25%;
+    background-color: white;
+}
+article {
+    flex: 75%;
+    /*background-color: white;*/
+}
+nav {
+    display: flex;
+    background-color: black;
+    padding: 10px 0;
+}
+
+nav a {
+    flex: auto;
+    background-color: #ccc;
+    color: black;
+    text-align: center;
+    margin: 0 5px;
+    padding: 5px 0;
+    text-decoration: none;
+}
+
+nav a:hover {
+    outline: 1px solid red;
+    color: red;
+    text-decoration: underline;
+}
+nav a:last-of-type(1), nav a:nth-last-of-type(2), nav a:nth-last-of-type {
+    flex-shrink: 2;
+}
