@@ -1,0 +1,14 @@
+.alert-info {
+    display: flex;
+    border: 1px solid black;
+    justify-content: center;
+    padding: 20px;
+}
+nav ul {
+    list-style-type: none;
+}
+.nav-links a {
+    background-color: grey;
+    justify-self: center;
+    margin: 10px;
+}
