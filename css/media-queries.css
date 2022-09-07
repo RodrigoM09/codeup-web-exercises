@@ -1,14 +1,35 @@
+body {
+    display: inline-block;
+
+}
+
 .alert-info {
     display: flex;
     border: 1px solid black;
     justify-content: center;
     padding: 20px;
+    background-color: lightblue;
+}
+
+h1 {
+    text-align: center;
 }
 nav ul {
+    text-align: center;
     list-style-type: none;
+    padding: 10px;
 }
+
+nav ul li {
+    border: 1px solid black;
+    background-color: rgb(204, 204, 204);
+    padding: 5px;
+    margin: 5px;
+}
+
 .nav-links a {
-    background-color: grey;
-    justify-self: center;
-    margin: 10px;
+
+}
+.main {
+    display: inline;
 }
