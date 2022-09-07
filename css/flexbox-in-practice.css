@@ -20,6 +20,8 @@ div {
     border-radius: 7px;
     padding: 20px;
     height: 150px;
+    justify-content: center;
+    align-items: center;
 }
 div a{
     display: block;
@@ -27,4 +29,19 @@ div a{
     width: 150px;
     margin: auto;
 
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid darkgrey;
+    padding: 5px;
+    width: 330px;
+    margin: 10px;
+}
+section p {
+    flex-grow: 1;
 }
