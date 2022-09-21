@@ -29,7 +29,7 @@ $(function (){
     });
 
     $('#codeUp').dblclick('double-click', function (){
-        $('p').css('fontSize','18px')
+        $(this).css('fontSize','18px')
     });
 
 

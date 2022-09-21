@@ -34,4 +34,10 @@ $(function (){
         console.log(e.originalEvent.key);
     })
 
+    console.log($("div").text()); //gets just text The difference between .text() and .html()
+    console.log($("div").text());/** gets text and html
+     <div><p>The difference between .text() and .html()</p> </div> **/
+
+
+
 });
