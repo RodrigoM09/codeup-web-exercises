@@ -1,0 +1,5 @@
+$(function (){
+
+    $('#clickMe').on('click')
+
+});
