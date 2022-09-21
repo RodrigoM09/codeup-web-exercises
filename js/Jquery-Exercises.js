@@ -11,16 +11,26 @@ $(function (){
     //     'width': 'fit-content'
     // })
 
-    $("li").css({
-        'fontSize': "20px",
-    })
+    // $("li").css({
+    //     'fontSize': "20px",
+    // })
+    //
+    //
+    //
+    // $("li, p, h1").css({
+    //     'backgroundColor': "yellow",
+    // })
+
+    // let $alert = $("h1").text();
+    // alert($alert);
+
+    $(".h1").on('click', function (){
+        $(this).css('color', 'orange')
+    });
+
+    $('#codeUp').dblclick('double-click', function (){
+        $('p').css('fontSize','18px')
+    });
 
 
-
-    $("li, p, h1").css({
-        'backgroundColor': "yellow",
-    })
-
-    let $alert = $("h1").text();
-    alert($alert);
 });
