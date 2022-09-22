@@ -13,6 +13,19 @@ $(function (){
       $("main").toggleClass("sansSerif");
    });
 
+   $("h2").css({
+      "color": "blue",
+      "text-decoration": "underline",
+      "cursor": "pointer"
+   });
 
+
+   $("h2").on('click', function(){
+      $(this).next().slideToggle();
+   });
+
+   $("header p").hover(function (){
+      $(this).parent().toggleClass("dark-mode")
+   })
 
 });

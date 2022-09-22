@@ -1,3 +1,6 @@
-.invisible{
+.invisible {
     visibility: hidden;
+}
+.styler {
+    background-color: yellow;
 }
