@@ -12,8 +12,27 @@
 
 <body>
 
-
-
+<div class="container row mx-auto">
+    <div id='map' class="mx-auto mt-4"></div>
+</div>
+<form class="mx-auto mt-2 w-25">
+    <label for="zoom">Set Zoom</label>
+    <input type="text" name="zoom" id="zoom" class="my-2">
+    <button id="zoomSubmit">Submit</button>
+</form>
+        <script>
+                mapboxgl.accessToken = MAPBOX_API_TOKEN;
+                const map = new mapboxgl.Map({
+                container: 'map', // container ID
+                style: 'mapbox://styles/mapbox/streets-v11', // style URL
+                center: [-115.1, 36.1], // starting position [lng, lat]
+                zoom: 11, // starting zoom
+                projection: 'globe' // display the map as a 3D globe
+                });
+                map.on('style.load', () => {
+                map.setFog({}); // Set the default atmosphere style
+                });
+        </script>
 
 </body>
 </html>
