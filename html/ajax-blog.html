@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>ajax-blog</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <style>
+        #posts{
+        }
+    </style>
 </head>
 <body>
 
 <div id="posts"></div>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="../js/jquery-3.6.1.min.js"></script>
 <script>
     (function () {
             $.ajax("/data/blog.json").done(function (data){
                 data.forEach(function (blogs){
                 let postDiv = `
                     <div class="post">
-                        ${blogs.title}
-                        ${blogs.content}
-                        ${blogs.categories}
-                        ${blogs.date}
+                       <h2> ${blogs.title}<h2>
+                        <p>${blogs.content}</p><br>
+                        <p>${blogs.categories.join(', ')}</p><br>
+                       <p>${blogs.date}</p><br>
                     </div>`;
                 $('#posts').append(postDiv);
 

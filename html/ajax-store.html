@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Online Store</title>
+
 </head>
 <style>
     #inventory-info {
@@ -45,8 +46,8 @@
 </table>
 <button>Refresh</button>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
+<script src="../js/jquery-3.6.1.min.js"></script>
 <script>
 (function() {
     "use strict";
@@ -62,12 +63,13 @@
         e.preventDefault();
         $.ajax("/data/inventory.json").done(function (data){
             data.forEach(function (tool){
-                let rowTemplate = `<tr>
-                    <td>${tool.title}</td>
-                    <td>${tool.quantity}</td>
-                    <td>${tool.price}</td>
-                    <td>${tool.categories}</td>
-                </tr>`;
+                let rowTemplate =
+                    `<tr>
+                        <td>${tool.title}</td>
+                        <td>${tool.quantity}</td>
+                        <td>${tool.price}</td>
+                        <td>${tool.categories.join(', ')}</td>
+                      </tr>`;
                 $("#insertProducts").append(rowTemplate);
             });
         });
