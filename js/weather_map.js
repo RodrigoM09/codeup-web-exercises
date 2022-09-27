@@ -42,19 +42,19 @@ function updateWeather(lng, lat){
 
 
         $('#currentCity').html(`Current City: ${data.city.name}`)
-        $('#day1Head').html(`Date: ${data.list[0].dt_txt} <img src="http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png">`)
+        $('#day1Head').html(`Date: ${data.list[0].dt_txt} <img class="d-flex ms-5" src="http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png">`)
         $('#day1').html(`Temperature: ${data.list[0].main.temp} <br><hr> Humidty: ${data.list[0].main.humidity}<br><hr> Wind Speed: ${data.list[0].wind.speed}`);
 
-        $('#day2Head').html(`Date: ${data.list[8].dt_txt} <img src="http://openweathermap.org/img/w/${data.list[8].weather[0].icon}.png">`)
+        $('#day2Head').html(`Date: ${data.list[8].dt_txt} <img class="d-flex ms-5" src="http://openweathermap.org/img/w/${data.list[8].weather[0].icon}.png">`)
         $('#day2').html(`Temperature: ${data.list[8].main.temp} <br><hr> Humidty: ${data.list[8].main.humidity}<br><hr> Wind Speed: ${data.list[8].wind.speed}`);
 
-        $('#day3Head').html(`Date: ${data.list[16].dt_txt} <img src="http://openweathermap.org/img/w/${data.list[16].weather[0].icon}.png">`)
+        $('#day3Head').html(`Date: ${data.list[16].dt_txt} <img class="d-flex ms-5" src="http://openweathermap.org/img/w/${data.list[16].weather[0].icon}.png">`)
         $('#day3').html(`Temperature: ${data.list[16].main.temp} <br><hr> Humidty: ${data.list[16].main.humidity}<br><hr> Wind Speed: ${data.list[16].wind.speed}`);
 
-        $('#day4Head').html(`Date: ${data.list[24].dt_txt} <img src="http://openweathermap.org/img/w/${data.list[24].weather[0].icon}.png">`)
+        $('#day4Head').html(`Date: ${data.list[24].dt_txt} <img class="d-flex ms-5" src="http://openweathermap.org/img/w/${data.list[24].weather[0].icon}.png">`)
         $('#day4').html(`Temperature: ${data.list[24].main.temp} <br><hr> Humidty: ${data.list[24].main.humidity}<br><hr> Wind Speed: ${data.list[24].wind.speed}`);
 
-        $('#day5Head').html(`Date: ${data.list[32].dt_txt} <img src="http://openweathermap.org/img/w/${data.list[32].weather[0].icon}.png">`)
+        $('#day5Head').html(`Date: ${data.list[32].dt_txt}<br><img class="d-flex ms-5" src="http://openweathermap.org/img/w/${data.list[32].weather[0].icon}.png">`)
         $('#day5').html(`Temperature: ${data.list[32].main.temp} <br><hr> Humidty: ${data.list[32].main.humidity}<br><hr> Wind Speed: ${data.list[32].wind.speed}`);
 
     });
