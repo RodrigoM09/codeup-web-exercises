@@ -1,33 +1,52 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoicmlnbzkxIiwiYSI6ImNsOGVwbXB0ZTAxZHMzb3E0bTdiN2M2YnMifQ.MVwHK5IAocSxHQUifCCINQ';
-const map = new mapboxgl.Map({
-    container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/streets-v11', // style URL
-    center: [-98.48527, 29.423017], // starting position [lng, lat]
-    zoom: 9, // starting zoom
-    projection: 'globe' // display the map as a 3D globe
-});
-map.on('style.load', () => {
-    map.setFog({}); // Set the default atmosphere style
-});
 
+// REQUESTS USERS CURRENT LOCATION
+navigator.geolocation.getCurrentPosition(successLocation, errorLocation,{
+    enableHighAccuracy: true
+})
+// PLACES USERS LNG AND LAT IN PROPER FORMAT FOR MAPBOX
+function successLocation(position){
+    setupMap([position.coords.longitude, position.coords.latitude])
+}
+// SETS LAS VEGAS AS THE DEFAULT MAP LOCATION IF USER DENIES LOCATION REQUEST
+function errorLocation(){
+    setupMap([-115.06833, 36.09483])
+}
 
-$('#find').on('click', function (e){
-    e.preventDefault()
-    let address = $('#weatherIn').val(); //GETS VALUE FROM THE INPUT
-    geocode(address, MAPBOX_API_TOKEN).then(function(result){
-        map.setCenter(result); //MOVES MAPS CENTER TO RESULT
-        let markerLngLat = {
-            lng: result[0],
-            lat: result[1]
-            // SETS LNG AND LAT TO RESULTS OF GEOCODE, IN PROPER FORMAT FOR WEATHER API
-        }
-        const marker = new mapboxgl.Marker()
-            .setLngLat(markerLngLat)
-            .addTo(map);
-        updateWeather(result[0], result[1]) //UPDATES WEATHER FUNCTION(BELOW) TO NEW LNG AND LAT GATHERED FROM USERS INPUT THROUGH GEOCODE
+//MAPBOX IS STORED IN A FUNCTION WHICH ALLOWS ME TO SET THE CENTER OF THE MAP USING THE LNG LAT.
+function setupMap(center) {
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: center, // starting position [lng, lat]
+        zoom: 9, // starting zoom
+        projection: 'globe' // display the map as a 3D globe
     });
-});
+    map.on('style.load', () => {
+        map.setFog({}); // Set the default atmosphere style
+    });
 
+    // ADDS ZOOM AND DIRECTION CONTROLS TO MAP SCREEN
+    const nav = new mapboxgl.NavigationControl();
+    map.addControl(nav,);
+
+    $('#find').on('click', function (e) {
+        e.preventDefault()
+        let address = $('#weatherIn').val(); //GETS VALUE FROM THE INPUT
+        geocode(address, MAPBOX_API_TOKEN).then(function (result) {
+            map.setCenter(result); //MOVES MAPS CENTER TO RESULT
+            let markerLngLat = {
+                lng: result[0],
+                lat: result[1]
+                // SETS LNG AND LAT TO RESULTS OF GEOCODE, IN PROPER FORMAT FOR WEATHER API
+            }
+            const marker = new mapboxgl.Marker({draggable: true})
+                .setLngLat(markerLngLat)
+                .addTo(map);
+            updateWeather(result[0], result[1]) //UPDATES WEATHER FUNCTION(BELOW) TO NEW LNG AND LAT GATHERED FROM USERS INPUT THROUGH GEOCODE
+        });
+    });
+}
 
 //MAKES SAN ANTONIO THE DEFAULT LOCATION ON MAP AND WEATHER
 //THIS IS THE SAME AS THE FUNCTION BELOW JUST GIVING IT LNG AND LAT
