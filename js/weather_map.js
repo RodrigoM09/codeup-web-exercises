@@ -44,6 +44,16 @@ function setupMap(center) {
                 .setLngLat(markerLngLat)
                 .addTo(map);
             updateWeather(result[0], result[1]) //UPDATES WEATHER FUNCTION(BELOW) TO NEW LNG AND LAT GATHERED FROM USERS INPUT THROUGH GEOCODE
+
+            //UPDATES WEATHER ON LOCATION DRAG
+            const coordinates = document.getElementById('coordinates');
+            function onDragEnd() {
+                const lngLat = marker.getLngLat();
+                coordinates.style.display = 'block';
+                coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+                updateWeather(lngLat.lng, lngLat.lat);
+            }
+            marker.on('dragend', onDragEnd);
         });
     });
 }
