@@ -24,10 +24,17 @@ function successLocation(position){
 // SETS LAS VEGAS AS THE DEFAULT MAP LOCATION IF USER DENIES LOCATION REQUEST
 function errorLocation(){
     setupMap([-115.06833, 36.09483])
-    updateWeather(-115.06833, 36.09483)
-            new mapboxgl.Marker({draggable: true})
+           let errorMarker = new mapboxgl.Marker({draggable: true})
             .setLngLat([-115.06833, 36.09483])
             .addTo(map)
+
+    function onDragEnd() {
+        const lngLat = errorMarker.getLngLat();
+        console.log(lngLat)
+        updateWeather(lngLat.lng, lngLat.lat);
+    }
+
+    errorMarker.on('dragend', onDragEnd);
 }
 
 //MAPBOX IS STORED IN A FUNCTION WHICH ALLOWS ME TO SET THE CENTER OF THE MAP USING THE LNG LAT.
