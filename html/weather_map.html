@@ -12,13 +12,14 @@
   <link rel="stylesheet" href="weather_map.css">
 </head>
 <body>
-<!---------------------------------NAV BAR AND SEARCH --------------------------------->
+<!--------------------------------- NAV AND SEARCH SECTION --------------------------------->
         <section>
+            <!---------------------------NAV--------------------------------->
             <nav class="navbar navbar-light bg-primary justify-content-between">
                 <h6 class="mx-2">Weather App</h6>
                 <h6 id="currentCity" class="me-3">Current City: </h6> <!-----------Current City Manipulated by append in JS---------------->
             </nav>
-
+            <!---------------------------SEARCH --------------------------------->
             <form onsubmit="e.preventDefault();" class="d-flex justify-content-start">
                 <div class="form-group mx-sm-3 mb-2 d-flex">
                     <label for="weatherIn" class="sr-only mx-0 mt-3">Place: </label>
@@ -26,19 +27,21 @@
                 </div>
                 <button id="find" type="submit" class="btn btn-primary p-1 mx-0 my-3">Find</button>
             </form>
-        </section>
-        <!---------------------------Beginning of BIG DIV --------------------------------->
-        <div class="theBigDiv container">
-            <!--------DAY ONE CARD ---------------------------------------------------------------->
-                <div id="weatherContainer" class="d-flex">
+        </section><!------------------END OF NAV SECTION--------------------------------->
+
+        <div class="theBigDiv container"><!---------------------------Beginning of BIG DIV --------------------------------->
+
+                <div id="weatherContainer" class="d-flex"><!--------BEGINNING OF WEATHER CARDS DIV ----------------------------------->
+
+                    <!--------DAY ONE CARD ---------------------------------------------------------------->
                     <div id="day1Card" class="card m-2" style="width: 18rem;">
                         <div id="day1Head" class="card-header">
                         </div>
                         <ul class="list-group list-group-flush">
                             <li id="day1" class="list-group-item"></li>
                         </ul>
-                    </div>
-                    <!---------------------END DAY ONE CARD --------------------------------------------->
+                    </div><!---------------------END DAY ONE CARD --------------------------------------------->
+
 
 
                     <!--------DAY TWO CARD -------------------------------------------------------->
@@ -47,9 +50,9 @@
                         <ul class="list-group list-group-flush">
                             <li id="day2" class="list-group-item"></li>
                         </ul>
-                    </div>
+                    </div><!--------END DAY TWO CARD ------------------------------------------------------>
 
-                    <!--------END DAY TWO CARD ------------------------------------------------------>
+
 
                     <!--------DAY THREE CARD -------------------------------------------------------->
                     <div id="day3Card" class="card m-2" style="width: 18rem;">
@@ -57,8 +60,8 @@
                         <ul class="list-group list-group-flush">
                             <li id="day3" class="list-group-item"></li>
                         </ul>
-                    </div>
-                    <!-------- END DAY THREE CARD ----------------------------------------------------->
+                    </div><!-------- END DAY THREE CARD ----------------------------------------------------->
+
 
                     <!-------- DAY FOUR CARD ----------------------------------------------------------->
                     <div id="day4Card" class="card m-2" style="width: 18rem;">
@@ -66,8 +69,8 @@
                         <ul class="list-group list-group-flush">
                             <li id="day4" class="list-group-item"></li>
                         </ul>
-                    </div>
-                    <!-------- END DAY FOUR CARD ------------------------------------------------------->
+                    </div><!-------- END DAY FOUR CARD ------------------------------------------------------->
+
 
                     <!-------- DAY FIVE CARD ----------------------------------------------------------->
                     <div id="day5Card" class="card m-2" style="width: 18rem;">
@@ -75,17 +78,19 @@
                         <ul class="list-group list-group-flush">
                             <li id="day5" class="list-group-item"></li>
                         </ul>
-                    </div>
-                    <!-------- END DAY FIVE CARD -------------------------------------------------------->
-
-                </div>
+                    </div><!-------- END DAY FIVE CARD -------------------------------------------------------->
 
 
+                </div><!--------END OF WEATHER CARDS DIV ---------------------------------------------------------------->
+
+            <!-------------------------MAPBOX USES BOOTSTRAP TO POSITION--------------------------------->
                 <div id="mapParent" class="d-flex justify-content-center fixed-bottom">
                           <div id='map' style='width: 90%; height: 300px;'></div>
-                </div>
+                </div><!---------------------------END OF MAPBOX-------------------------------------------------->
 
-        </div>
+        </div><!---------------------------END OF THE BID DIV-------------------------------------------------->
+
+
 <script src="../js/jquery-3.6.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="../js/weather_map.js"></script>
