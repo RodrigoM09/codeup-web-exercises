@@ -21,12 +21,14 @@ function successLocation(position){
     }
     startMarker.on('dragend', onDragEnd);
 }
+
 // SETS LAS VEGAS AS THE DEFAULT MAP LOCATION IF USER DENIES LOCATION REQUEST
 function errorLocation(){
     setupMap([-115.06833, 36.09483])
            let errorMarker = new mapboxgl.Marker({draggable: true})
             .setLngLat([-115.06833, 36.09483])
             .addTo(map)
+
 // GIVES SAME DRAG AND UPDATE FUNCTIONALITY TO MARKER
     function onDragEnd() {
         const lngLat = errorMarker.getLngLat();
@@ -52,6 +54,7 @@ function setupMap(center) {
     const nav = new mapboxgl.NavigationControl();
     map.addControl(nav,);
 
+    // CREATES CLICK FUNCTION ON FIND BUTTON
     $('#find').on('click', function (e) {
         e.preventDefault()
         let address = $('#weatherIn').val(); //GETS VALUE FROM THE INPUT
