@@ -5,8 +5,17 @@ navigator.geolocation.getCurrentPosition(successLocation, errorLocation,{
     enableHighAccuracy: true
 })
 // PLACES USERS LNG AND LAT IN PROPER FORMAT FOR MAPBOX
+let map;
 function successLocation(position){
-    setupMap([position.coords.longitude, position.coords.latitude])
+    setupMap([position.coords.longitude, position.coords.latitude]);
+    const startMarker = new mapboxgl.Marker({draggable: true})
+        .setLngLat([position.coords.longitude, position.coords.latitude])
+        .addTo(map);
+    function onDragEnd() {
+        const lngLat = startMarker.getLngLat();
+        updateWeather(lngLat.lng, lngLat.lat);
+    }
+    startMarker.on('dragend', onDragEnd);
 }
 // SETS LAS VEGAS AS THE DEFAULT MAP LOCATION IF USER DENIES LOCATION REQUEST
 function errorLocation(){
@@ -15,7 +24,7 @@ function errorLocation(){
 
 //MAPBOX IS STORED IN A FUNCTION WHICH ALLOWS ME TO SET THE CENTER OF THE MAP USING THE LNG LAT.
 function setupMap(center) {
-    const map = new mapboxgl.Map({
+     map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: center, // starting position [lng, lat]
@@ -46,11 +55,8 @@ function setupMap(center) {
             updateWeather(result[0], result[1]) //UPDATES WEATHER FUNCTION(BELOW) TO NEW LNG AND LAT GATHERED FROM USERS INPUT THROUGH GEOCODE
 
             //UPDATES WEATHER ON LOCATION DRAG
-            const coordinates = document.getElementById('coordinates');
             function onDragEnd() {
                 const lngLat = marker.getLngLat();
-                coordinates.style.display = 'block';
-                coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
                 updateWeather(lngLat.lng, lngLat.lat);
             }
             marker.on('dragend', onDragEnd);
