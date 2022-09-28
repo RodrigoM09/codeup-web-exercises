@@ -27,13 +27,11 @@ function errorLocation(){
            let errorMarker = new mapboxgl.Marker({draggable: true})
             .setLngLat([-115.06833, 36.09483])
             .addTo(map)
-
+// GIVES SAME DRAG AND UPDATE FUNCTIONALITY TO MARKER
     function onDragEnd() {
         const lngLat = errorMarker.getLngLat();
-        console.log(lngLat)
         updateWeather(lngLat.lng, lngLat.lat);
     }
-
     errorMarker.on('dragend', onDragEnd);
 }
 
@@ -72,10 +70,8 @@ function setupMap(center) {
             //UPDATES WEATHER ON LOCATION DRAG
             function onDragEnd() {
                 const lngLat = marker.getLngLat();
-                console.log(lngLat)
                 updateWeather(lngLat.lng, lngLat.lat);
             }
-
             marker.on('dragend', onDragEnd);
         });
     });
