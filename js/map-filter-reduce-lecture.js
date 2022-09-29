@@ -21,11 +21,11 @@ const pricesAfterTax = prices.map(price => {
 console.log(prices)
 console.log(pricesAfterTax);
 
-//new syntax for doubling an array -----------------------IMPORTANT!!
+//NEW SYNTAX FOR DOUBLING AN ARRAY ------------------------------------------------------------------IMPORTANT!!
 const doubleArray = prices.map(price => price * 2);
 console.log(doubleArray);
 
-// classic way of doubling an array -----------------------IMPORTANT!!
+// CLASSIC WAY OF DOUBLING AN ARRAY -----------------------------------------------------------------IMPORTANT!!
 const array = [4, 5, 7, 9];
 function doubleTheArray(array){
    let newArray = [];
@@ -37,7 +37,7 @@ function doubleTheArray(array){
 console.log(doubleTheArray(array));
 
 
-
+// APPENDS EACH OF THE ARRAY ELEMENTS TO THE HTML INDIVIDUALLY ----------------------------------------------->
 const desserts = ['sherbet', 'whiskey cake', 'cupcake', 'eclair'];
 const eatingDessert = desserts.map(dessert => `Eating ${dessert} makes you fat`)
 eatingDessert.forEach(element => {
@@ -71,13 +71,43 @@ const cars = [
       mileage: 11248
    }
 ];
-
-const mileages = cars.map(car => car.mileage);
+// ADDS A NEW PROPERTY TO THE OBJECTS------------------------------------------------------------------->
+const mileages = cars.map(car => car.mileage); //.MAP TAKE PART(MILEAGE) OF THIS ARRAY OF OBJECTS AND RETURNS IT AS AN ARRAY
 console.log(mileages)
-
 const newObject = cars.map(car => {
    car.newProp = 'new property';
    return car;
 });
 console.log(cars[0]);
 
+
+const under10K = cars.filter(car => car.mileage < 10000);
+//THIS IS OBJECT DECONSTRUCTION ------------------------------------------------------------------------>
+under10K.forEach(({make, model, mileage}) =>{
+   output += `<p> I found a ${make} with ${mileage} miles</p>`
+   $('#output').html(output);
+});
+
+// CHAINING FUNCTIONS------------------------------------------------------------------------------------>
+prices.filter(price => price < 10) //. FILTER LOOKS FOR CRITERIA (PRICES UNDER 10)--------------------------->
+   .map(price => { // CALCULATES PRICE WITH TAXES AND OUTPUTS AN ARRAY USING .MAP------------------------>
+   const tax =(price + 0.825).toFixed(2);
+   const total = (price + parseFloat(tax).toFixed(2));
+   return parseFloat(total);
+}).forEach(price => $("div").append(`<p>${price}</p>`));
+// FOREACH WORKS ON ARRAYS, SINCE .MAP OUTPUTS AN ARRAY THIS CAN BE USED ----------------------IMPORTANT!!
+
+
+const totalCost = prices.reduce(function(total, price){
+   return total + price;
+});
+console.log(totalCost);
+
+
+// const prices = [32.99, 21.99, 6.99, 12.99, 8.98, 5.99]; GLOBALLY DECLARED AT TOP OF PAGE
+// AT INDEX 0 IT IS LIKE IT DOES LET TOTAL = ARRAY[0]
+ let total = prices.reduce(function(total, itemPrice, index){
+   console.log(`The index is ${index}, the total is ${total}, the itemPrice is ${itemPrice}`);
+   return total + itemPrice;
+});
+$("#output").append(`<p>The total is ${totalCost}</p>`);
