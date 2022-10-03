@@ -107,7 +107,77 @@ console.log(totalCost);
 // const prices = [32.99, 21.99, 6.99, 12.99, 8.98, 5.99]; GLOBALLY DECLARED AT TOP OF PAGE
 // AT INDEX 0 IT IS LIKE IT DOES LET TOTAL = ARRAY[0]
  let total = prices.reduce(function(total, itemPrice, index){
-   console.log(`The index is ${index}, the total is ${total}, the itemPrice is ${itemPrice}`);
+   console.log(`The index is ${index}, the total is ${total.toFixed(2)}, the itemPrice is ${itemPrice}`);
    return total + itemPrice;
 });
 $("#output").append(`<p>The total is ${totalCost}</p>`);
+
+// The function passed to the reduce method takes an extra parameter, The Accumulator
+// The Accumulator is often abbreviated to "acc
+
+
+//-----REDUCE WILL REDUCE AN ARRAY OR OBJECT TO ITS ELEMENTS OR PROPERTIES, ALLOWING ME TO MANIPULATE THOSE COMPONENTS.
+
+
+//--------------------IN THIS EXAMPLE WE USE REDUCE TO ACCESS EACH OF THE PRICES IN THE ARRAY ABOVE. ----------------------------->
+const averagePrice = prices.reduce((function(accumulator, current,index, array){
+   accumulator += current;
+   if(index === array.length -1){
+      return accumulator/array.length;
+   }
+   return accumulator;
+}));
+
+// const cars = [
+//    {
+//       make: "Honda",
+//       model: "Civic",
+//       mileage: 10428
+//    },
+//    {
+//       make: "Toyota",
+//       model: "Corolla",
+//       mileage: 9425
+//    },
+//    {
+//       make: "Ford",
+//       model: "Mustang",
+//       mileage: 2567
+//    },
+//    {
+//       make: "Audi",
+//       model: "A3",
+//       mileage: 14500
+//    },
+//    {
+//       make: "Mazda",
+//       model: "3",
+//       mileage: 11248
+//    }
+// ];
+//-----------------------------USES REDUCE TO CREATE AN ARRAY OF JUST MILAGES------------------------------------------->
+const mileages3 = cars.reduce((accumulator, car) => {
+   accumulator.push(car.mileage);
+   return accumulator;
+}, []);
+console.log(mileages3);
+
+
+//--------------------USES REDUCE TO CREATE ARRAY OF MILEAGES AND THEN SORTS TO RETURN HIGHEST MILEAGE------------------->
+const newMileages = cars.reduce((accumulator, car, index, array) => {
+   accumulator.push(car.mileage);
+   if (index === array.length -1){
+      return accumulator.sort(function (a,b){return b-a})[0];
+   }
+   return accumulator;
+}, []);
+console.log(newMileages);
+
+//-------------DOES SAME AS ABOVE USING REDUCE TWICE AND MATH.MAX, RETURNS THE HIGHEST MILEAGE.
+const highestMileage = cars.reduce((accumulator, car) => {
+   accumulator.push(car.mileage);
+   return accumulator;
+}, []).reduce((accumulator, mileage) => {
+   return Math.max(accumulator, mileage);
+});
+console.log(highestMileage);
