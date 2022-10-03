@@ -78,13 +78,25 @@ console.log(longestEmail)
 
 
  /** Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin. */
-     // ------THE WAY I DID IT--------------------------------------------->
+ //-------------THE WAY I DID IT--------------------------------------------->
  const listUsers = users.reduce((total, name) => {
      return total + " " + name.name;
  },"Your instructors are:");
 console.log(listUsers)
-// THE WAY JASON DID IT --------------------------------------------------->
+
+//--------THE WAY JASON DID IT-------------------------------------------------->
 let userNamesBetter = users.reduce((pre, user, index, usersArray) => {
     return pre + `${pre ? ', ': 'Your instructors are: '}${user.name} ${(index == (usersArray.length -1)) ? '.' : ''}`}, "");
 console.log(userNamesBetter)
 
+
+/** Use .reduce to get the unique programming languages */
+let uniqueLanguages = users.reduce((accumulator, user) => {
+    user.languages.forEach(function (language){
+        if (!accumulator.includes(language)){
+            accumulator.push(language);
+        }
+    });
+    return accumulator;
+}, []);
+console.log(uniqueLanguages)
