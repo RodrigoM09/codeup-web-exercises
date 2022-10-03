@@ -155,7 +155,7 @@ const averagePrice = prices.reduce((function(accumulator, current,index, array){
 //       mileage: 11248
 //    }
 // ];
-//-----------------------------USES REDUCE TO CREATE AN ARRAY OF JUST MILAGES------------------------------------------->
+//-----------------------------USES REDUCE TO CREATE AN ARRAY OF JUST MILEAGES------------------------------------------->
 const mileages3 = cars.reduce((accumulator, car) => {
    accumulator.push(car.mileage);
    return accumulator;
