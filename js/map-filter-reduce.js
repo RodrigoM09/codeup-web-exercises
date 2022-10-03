@@ -40,7 +40,18 @@ const users = [
 
 
  /** Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.*/
-const languages = users.map(user => user.languages);
+ // ---WITHOUT FILTER "VANILLA"
+//  let threeLanguages = [];
+//  for (let i = 0; i < users.length; i+=1);{
+//  console.log(users[i].languages.length);
+//  if(users[i].languages.length > 2){
+//      threeLanguages.push(users[i]);
+//  }
+// }
+// USING .FILTER METHOD------------------------------
+const languages = users.filter(function (user){
+    return user.languages.length > 2;
+});
 console.log(languages);
 
 
@@ -53,20 +64,27 @@ console.log(languages);
  const totalYears = users.reduce((total, user) => {
      return total + user.yearsOfExperience
  }, 0);
-
  console.log(totalYears)
 
+let averageExp = totalYears / users.length;
+ console.log(averageExp)
+
+
  /** Use .reduce to get the longest email from the list of users.*/
-const longest = users.reduce((total, email) =>{
+const longestEmail = users.reduce((total, email) =>{
     return total.length > email.email.length ? total : email.email;
 },[]);
-console.log(longest)
+console.log(longestEmail)
 
 
  /** Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin. */
-
+     // ------THE WAY I DID IT--------------------------------------------->
  const listUsers = users.reduce((total, name) => {
      return total + " " + name.name;
- },[]);
+ },"Your instructors are:");
 console.log(listUsers)
+// THE WAY JASON DID IT --------------------------------------------------->
+let userNamesBetter = users.reduce((pre, user, index, usersArray) => {
+    return pre + `${pre ? ', ': 'Your instructors are: '}${user.name} ${(index == (usersArray.length -1)) ? '.' : ''}`}, "");
+console.log(userNamesBetter)
 
