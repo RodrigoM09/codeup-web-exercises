@@ -1,28 +1,18 @@
-//AJAX request with jQuery
-$.get("data/murals.json", function(data){
-    console.log(data)
-});
+//-----FETCHES INFORMATION USER FROM GITHUB AND LOGS AN OBJECT-------------------------------->
+let usersInput = $("#input").val()
 
-// Fetch API
-fetch("data/murals.json").then(function(response){
-    return response.json();
-}).then(function (data){
-    console.log(data);
-});
-// abbreviated version of above ------------------------------------------------->
-fetch("data/murals.json").then(resp => resp.json()).then(data =>
-console.log(data))
+function getUserData(username) {
+    fetch(`https://api.github.com/users/${username}/events/public`, {
+        headers: {
+            'Authorization': `token ${GITHUB_PROMISES_TOKEN}`
+        }
+    }).then(response => response.json())
+        .then(events => {
+            console.log(events)
+        console.log(events[0].created_at)
+        console.log(events[0].actor.login)})
+        .catch(error => console.error(error));
 
-// Callback: a function passed as an argument to another function
-// it can run after another function has finished running
-
-function sayHello(greeting, name){
-    greeting = `${greeting}, ${name}`;
-    displayOutput(greeting)
-}
-sayHello("Hola", "Rodrigo");
-
-function displayOutput(output){
-    $("#output").html(output);
 }
 
+getUserData(usersInput);
