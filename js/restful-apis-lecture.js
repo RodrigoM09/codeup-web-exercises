@@ -49,8 +49,8 @@ getBooks();
 // fetch(booksURL, postOptions).then(getBooks)
 
 // The U in CRUD: Updating with PUT and PATCH requests
-// We'll use PUT to replace the entire contetn
-// We'll use PAtch to modify only part of the entry
+// We'll use PUT to replace the entire content
+// We'll use Patch to modify only part of the entry
 
 let modification = {
     title: "The Psychology of Money",
@@ -77,11 +77,10 @@ const patchOptions = {
 
 
 // The D in CRUD: Delete
-
 const deleteOptions = {
     method: 'DELETE',
     headers: {
         'Content-Type' : 'application/JSON'
     },
 }
-fetch(booksURL + "/1", patchOptions).then(getBooks);
+fetch(moviesURL + "/1", deleteOptions).then(getMovies);

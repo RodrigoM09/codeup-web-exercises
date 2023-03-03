@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax-blog</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <style>
+        #posts{
+        }
+    </style>
+</head>
+<body>
+
+<div id="posts"></div>
+
+<script src="js/jquery-3.6.1.min.js"></script>
+<script>
+    (function () {
+            $.ajax("/data/blog.json").done(function (data){
+                data.forEach(function (blogs){
+                let postDiv = `
+                    <div class="post">
+                       <h2> ${blogs.title}<h2>
+                        <p>${blogs.content}</p><br>
+                        <p>${blogs.categories.join(', ')}</p><br>
+                       <p>${blogs.date}</p><br>
+                    </div>`;
+                $('#posts').append(postDiv);
+
+            });
+        });
+
+
+
+
+
+
+    })();
+</script>
+</body>
+</html>

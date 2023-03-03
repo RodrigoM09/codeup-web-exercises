@@ -82,6 +82,7 @@ console.log(cars[0]);
 
 
 const under10K = cars.filter(car => car.mileage < 10000);
+
 //THIS IS OBJECT DECONSTRUCTION ------------------------------------------------------------------------>
 under10K.forEach(({make, model, mileage}) =>{
    output += `<p> I found a ${make} with ${mileage} miles</p>`
